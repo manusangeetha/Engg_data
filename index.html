@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Login Page</title>
+</head>
 <body>
+    <h2>Login</h2>
+    <form>
+        <!-- Your login form fields go here -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
 
-<h1>The input formaction attribute</h1>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
 
-<p>The formaction attribute specifies the URL of a file that will process the input when the form is submitted.</p>
+        <input type="button" value="Login" onclick="validateLogin()">
+    </form>
 
-<form action="/home.html">
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Submit">
-  <input type="submit" formaction="/home.html">
-</form>
+    <script>
+        function validateLogin() {
+            // Perform your login validation here (e.g., check credentials against a database)
 
+            // For demonstration purposes, let's assume the login is successful
+            var isLoggedIn = true;
+
+            if (isLoggedIn) {
+                // Redirect to the desired page after successful login
+                window.location.href = "/dashboard"; // Replace "/dashboard" with your desired page URL
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+    </script>
 </body>
 </html>
